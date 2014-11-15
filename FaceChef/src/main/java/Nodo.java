@@ -19,4 +19,8 @@ public class Nodo <E>{
     public void eliminarRelacion (Nodo n){
        this.lista.eliminar(n);
     }
+    
+    public void imprimir (){
+        this.lista.imprimir();
+    }
 }

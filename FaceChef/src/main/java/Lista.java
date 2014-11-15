@@ -132,11 +132,19 @@ public class Lista <E> {
         for (int a = 0; a< size; a++){
             if (this.obtenerElementoEnPosicion(a) == elemento){
                 if (this.primerNodo == actual){
-                    this.primerNodo = actual.siguiente;
-                    actual.siguiente = null;
-                    this.primerNodo.anterior = null;
-                    size--;
-                    return;
+                    if (this.primerNodo.siguiente == null && this.primerNodo.anterior == null){
+                        this.primerNodo = null;
+                        size--;
+                        return;
+                    }
+                    else{
+                        this.primerNodo = actual.siguiente;
+                        actual.siguiente = null;
+                        this.primerNodo.anterior = null;
+                        size--;
+                        this.imprimir();
+                        return;
+                    }
                 }
                 else if (this.ultimoNodo == actual){
                     this.ultimoNodo = actual.anterior;
