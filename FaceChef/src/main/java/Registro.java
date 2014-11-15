@@ -1,19 +1,18 @@
 
+//import com.sun.istack.internal.NotNull;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import javax.swing.JOptionPane;
-import javax.validation.constraints.NotNull;
 
 @Named (value="Registro")
 @RequestScoped
 public class Registro {
-    @NotNull
+    //@NotNull
     private String b;
-    @NotNull
+    //@NotNull
     private String c;
-    @NotNull
+    //@NotNull
     private String d;
     
     public String getB() {

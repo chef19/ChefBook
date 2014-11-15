@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Pagina Registro</title>
+        <title>FaceChef</title>
         <style type="text/css"> 
             .hola
             {
@@ -21,10 +21,10 @@
         </style>
     </h:head>
     <h:body>
-        <h1>Quiero Registrarme!</h1>
+        FaceChef
         <h:form>
             <h:messages>
-                <h:outputLabel for="b" value="Nombre  de Usuario :"/><h:inputText id="b" value="#{Registro.b}"/>
+                <h:outputLabel for="b" value=""/><h:inputText id="b" value="#{Registro.b}"/>
                 <br/>
                 <h:outputLabel for="c" value="Contraseña:"/>
                 <h:inputText id="c" value="#{Registro.c}"/>
@@ -33,7 +33,14 @@
                 <h:inputText id="d" value="#{Registro.d}"/>
                 <br/>
                 <h:commandButton class ="hola" value="Registrar" action="#{Registro.mensaje()}"/>
+                 <br/>
                 <br/>
+                <br/><br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/><br/>
 
                 <h:commandButton class ="perro" value="Registrar" action="#{Registro.mensaje()}"/>
             </h:messages>
