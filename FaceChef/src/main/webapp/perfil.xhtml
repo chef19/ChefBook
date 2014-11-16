@@ -66,11 +66,23 @@
 		position:absolute;
 		top: 330px;
 		left: 30px;
+                }
                 .subir {
 		position:absolute;
-		top: 330px;
+		top: 355px;
 		left: 30px;
 	}
+        .salir {
+		position:absolute;
+		top: 1px;
+		right: 1px;
+	}
+        .busqueda{
+            position: absolute;
+            top:1px;
+            left: 1px;
+            font-size: 23px;
+        }
         </style>
     </h:head>
     <h:body>
@@ -83,7 +95,10 @@
             <h:messages>
                 
             </h:messages>
-            
+            <h:commandButton class="salir" value="Cerrar sesión" action="faces/ingresar.xhtml" />
+            <br/>
+            <h:inputText class="busqueda" id="busqueda" />
+            <br/>
         </h:form>
         <form enctype="multipart/form-data" action="uploader.php" method="POST">
         <input class="cargar" name="uploadedfile" type="file" />

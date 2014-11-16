@@ -13,11 +13,6 @@
                 font-family: "Times New Roman", Times, serif;
                 display: block; 
             } 
-            .campo { width: 200px;
-                     height: 20px; 
-                     margin-bottom: 20px; 
-                     border: 1px Solid #FFFF;
-            }
             #bg{
                 position:fixed;
                 top:0;
@@ -39,6 +34,83 @@
                 text-align: center;
                 width: 20%;
               }
+              .nombreC{
+                  position:fixed;
+                  top: 80px;
+                  left: 250px;
+                  width: 200px;
+                  height: 20px; 
+                  margin-bottom: 20px; 
+                  border: 1px Solid #FFFF;
+              }
+              .nacimientoC{
+                  position:fixed;
+                  top: 125px;
+                  left: 250px;
+                  width: 200px;
+                  height: 20px; 
+                  margin-bottom: 20px; 
+                  border: 1px Solid #FFFF;
+              }
+              .fechaC{
+                  position:fixed;
+                  top: 165px;
+                  left: 250px;
+                  width: 200px;
+                  height: 20px; 
+                  margin-bottom: 20px; 
+                  border: 1px Solid #FFFF;
+              }
+              .correoC{
+                  position:fixed;
+                  top: 206px;
+                  left: 250px;
+                  width: 200px;
+                  height: 20px; 
+                  margin-bottom: 20px; 
+                  border: 1px Solid #FFFF;
+              }
+              .correoC{
+                  position:fixed;
+                  top: 206px;
+                  left: 250px;
+                  width: 200px;
+                  height: 20px; 
+                  margin-bottom: 20px; 
+                  border: 1px Solid #FFFF;
+              }
+              .contraseñaC{
+                  position:fixed;
+                  top: 257px;
+                  left: 250px;
+                  width: 200px;
+                  height: 20px; 
+                  margin-bottom: 20px; 
+                  border: 1px Solid #FFFF;
+              }
+              .carnetC{
+                  position:fixed;
+                  top: 307px;
+                  left: 250px;
+                  width: 200px;
+                  height: 20px; 
+                  margin-bottom: 20px; 
+                  border: 1px Solid #FFFF;
+              }
+              .salir1 {
+                position:fixed;
+                top: 350px;
+                left: 330px;
+                font-size: 15px;
+                font-weight: bold;
+                border-top: 2px solid #CCC;
+                clear: both;
+                float: none;
+                padding: 1em 0;
+                margin-top: 1em;
+                text-align: center;
+                width: 20%;
+              }
         </style>
         <script> 
             function valida() 
@@ -49,30 +121,30 @@
             </script> 
     </h:head>
     <h:body>
-        <h1>Quiero Registrarme!</h1>
+        <h1>Registro en la Red Social</h1>
         <h:form id="form">
             <h:messages>
                 <h:outputLabel class="label" for="b">Nombre Completo :</h:outputLabel>
-                <h:inputText class="campo" id="nombre" value="#{Registro.b}"/>
+                <h:inputText class="nombreC" id="nombre" value="#{Registro.b}"/>
                 <br/>
                 <h:outputLabel class="label" for="b">Lugar de nacimiento:</h:outputLabel>
-                <h:inputText class="campo" id="nacimiento" />
+                <h:inputText class="nacimientoC" id="nacimiento" />
                 <br/>
                 <h:outputLabel class="label" for="b">Fecha :</h:outputLabel>
-                <h:inputText class="campo" id="Fecha" />
+                <h:inputText class="fechaC" id="Fecha" />
                 <br/>
                 <h:outputLabel class="label" for="b">Correo :</h:outputLabel>
-                <h:inputText class="campo" id="Correo" />
+                <h:inputText class="correoC" id="Correo" />
                 <br/>
                 <h:outputLabel class="label" for="c" >Contraseña:</h:outputLabel>
-                <h:inputText class="campo" id="contraseña" value="#{Registro.c}"/>
+                <h:inputText class="contraseñaC" id="contraseña" value="#{Registro.c}"/>
                 <br/>
                 <h:outputLabel class="label" for="d">Carnet:</h:outputLabel>
-                <h:inputText class="campo" id="carnet" value="#{Registro.d}"/>
+                <h:inputText class="carnetC" id="carnet" value="#{Registro.d}"/>
                 <br/>
                 <h:commandButton class="botones" value="REGISTRAR" action="#{Registro.mensaje()}"/>
                 <br/>
-                <h:commandButton class="botones" value="SALIR" action="faces/inicio.xhtml" />
+                <h:commandButton class="salir1" value="SALIR" action="faces/inicio.xhtml" />
                 <br/>
             </h:messages>
         </h:form>
