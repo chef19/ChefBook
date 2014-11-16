@@ -37,7 +37,7 @@
 			.nav :hover {
 				background-color:#434343;
 			}
-			
+
 			.nav li ul {
 				display:none;
 				position:absolute;
@@ -56,21 +56,34 @@
 				right:-140px;
 				top:0px;
 			}
+                        #bg{
+                            position:fixed;
+                            top:0;
+                            left:0;
+                            z-index:-1;
+                        }
+                        #bg bg {
+                            opacity: 0.4;
+                            filter: alpha(opacity=70); /* For IE8 and earlier */
+                        }
+
         </style>
     </h:head>
     <h:body>
         
-        <h1 style = "color:#80BFFF"> Bienvenidos Nuestra Red Social </h1>
+        <h1 style = "color:#524F4F"> Bienvenidos Nuestra Red Social </h1>
         
         <div id="header">
 			<ul class="nav">
 				<li><a href="">Inicio</a></li>
-				<li><a href="">Ingresar</a>
+				<li><a href="faces/ingresar.xhtml">Ingresar</a>
 				</li>
-				<li><a href="faces/index.xhtml">Registrarme</a>
+                                
+				<li><a href="faces/registrar.xhtml">Registrarme</a>
 				</li>
 			</ul>
 		</div>
+        <p><img id="bg" src="faces/images/image.jpg"/></p>
         
     </h:body>
 </html>

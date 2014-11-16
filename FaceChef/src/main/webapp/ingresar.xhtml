@@ -5,47 +5,83 @@
     <h:head>
         <title>FaceChef</title>
         <style type="text/css"> 
-            .hola
-            {
-		background:#000;color:#1fb;padding:30px;font-size:30px;border:5px dashed #98fada;
-		left:100px;
-		bottom: 100px;
-		position:absolute; 
-            }
-            .perro{
-                background:#000;color:#1fb;padding:30px;font-size:30px;border:5px dashed #98fada;
-		left:10000px;
-		bottom: 100px;
-		position:absolute;
-            }
+            label { 
+                font-size: 24px;
+                font-family: "Times New Roman", Times, serif;
+                display: block; 
+            } 
+            #bg{
+                position:fixed;
+                top:0;
+                left:0;
+                z-index:-1;
+                        }
+            #bg bg {
+                    opacity: 0.4;
+                    filter: alpha(opacity=70); /* For IE8 and earlier */
+                }
+            .botones {
+                font-size: 15px;
+                font-weight: bold;
+                border-top: 2px solid #CCC;
+                clear: both;
+                float: none;
+                padding: 1em 0;
+                margin-top: 1em;
+                text-align: center;
+                width: 20%;
+              }
+              .acomodando{
+                    position: absolute;
+                    top: 170px;
+                    right: 750px;
+                    font-size: 15px;
+                    font-weight: bold;
+                    border-top: 2px solid #CCC;
+                    clear: both;
+                    float: none;
+                    padding: 1em 0;
+                    margin-top: 1em;
+                    text-align: center;
+                    width: 20%;
+                }
+                .caja1{
+                    position: absolute;
+                    top: 80px;
+                    right: 950px;
+                    width: 200px;
+                     height: 20px; 
+                     margin-bottom: 20px; 
+                     border: 1px Solid #FFFF;
+                }
+                .caja2{
+                    position: absolute;
+                    top: 125px;
+                    right: 950px;
+                    width: 200px;
+                     height: 20px; 
+                     margin-bottom: 20px; 
+                     border: 1px Solid #FFFF;
+                }
         </style>
     </h:head>
     <h:body>
-        FaceChef
+        <h1>Iniciar Sesión</h1>
         <h:form>
             <h:messages>
-                <h:outputLabel for="b" value=""/><h:inputText id="b" value="#{Registro.b}"/>
+                <h:outputLabel class="label" for="c" >Contraseña:</h:outputLabel>
+                <h:inputText class="caja1" id="c" value="#{Registro.c}"/>
                 <br/>
-                <h:outputLabel for="c" value="Contraseña:"/>
-                <h:inputText id="c" value="#{Registro.c}"/>
+                <h:outputLabel class="label" for="d" >Carnet:</h:outputLabel>
+                <h:inputText class="caja2" id="d" value="#{Registro.d}"/>
                 <br/>
-                <h:outputLabel for="d" value="Carnet:"/>
-                <h:inputText id="d" value="#{Registro.d}"/>
+                <h:commandButton class="botones" value="INICIAR" action="faces/perfil.xhtml"/>
                 <br/>
-                <h:commandButton class ="hola" value="Registrar" action="#{Registro.mensaje()}"/>
-                 <br/>
+                <h:commandButton class="acomodando" value="SALIR" action="faces/inicio.xhtml" />
                 <br/>
-                <br/><br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/><br/>
-
-                <h:commandButton class ="perro" value="Registrar" action="#{Registro.mensaje()}"/>
             </h:messages>
-        </h:form>
-       
+           </h:form>
+       <p><img id="bg" src="faces/images/image.jpg"/></p>
         
         
     </h:body>

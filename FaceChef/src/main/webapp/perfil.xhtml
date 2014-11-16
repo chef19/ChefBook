@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>FaceChef</title>
+        <style type="text/css"> 
+            label { 
+                font-size: 24px;
+                font-family: "Times New Roman", Times, serif;
+                display: block; 
+            } 
+            .campo { width: 200px;
+                     height: 30px; 
+                     margin-bottom: 20px; 
+                     border: 1px Solid #FFFF;
+            }
+            #bg{
+                position:fixed;
+                top:0;
+                left:0;
+                z-index:-1;
+                        }
+            #bg bg {
+                    opacity: 0.4;
+                    filter: alpha(opacity=70); /* For IE8 and earlier */
+                }
+            .botones {
+                font-size: 18px;
+                font-weight: bold;
+                border-top: 2px solid #CCC;
+                clear: both;
+                float: none;
+                padding: 1em 0;
+                margin-top: 1em;
+                text-align: center;
+                width: 20%;
+              }
+              div.img {
+                    margin: 10px;
+                    padding: 5px;
+                    border: 1px solid #0000ff;
+                    height: auto;
+                    width: auto;
+                    float: left;
+                    text-align: center;
+                }
+
+                div.img img {
+                    display: inline;
+                    margin: 1px;
+                    border: 1px solid #ffffff;
+                }
+
+                div.img a:hover img {
+                    border:1px solid #0000ff;
+                }
+
+                div.desc {
+                    text-align: center;
+                    font-weight: normal;
+                    width: 120px;
+                    margin: 5px;
+                }
+                .cargar {
+		position:absolute;
+		top: 330px;
+		left: 30px;
+                }
+                .subir {
+		position:absolute;
+		top: 355px;
+		left: 30px;
+	}
+        .salir {
+		position:absolute;
+		top: 1px;
+		right: 1px;
+	}
+        .busqueda{
+            position: absolute;
+            top:1px;
+            left: 1px;
+            font-size: 23px;
+        }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="img">
+            <a target="_blank">
+              <img src="faces/images/anonimo.jpg" alt="Klematis" width="290" height="280"/>
+            </a>
+          </div>
+        <h:form>
+            <h:messages>
+                
+            </h:messages>
+            <h:commandButton class="salir" value="Cerrar sesión" action="faces/ingresar.xhtml" />
+            <br/>
+            <h:inputText class="busqueda" id="busqueda" />
+            <br/>
+        </h:form>
+        <form enctype="multipart/form-data" action="uploader.php" method="POST">
+        <input class="cargar" name="uploadedfile" type="file" />
+        <input class="subir" type="submit" value="Subir archivo" />
+        </form>
+       <p><img id="bg" src="faces/images/perfil.jpg"/></p>
+        
+        
+    </h:body>
+</html>
