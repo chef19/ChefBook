@@ -23,4 +23,12 @@ public class Nodo <E>{
     public void imprimir (){
         this.lista.imprimir();
     }
+    
+    public Lista camino(E encontrar){
+        Lista amigos = new Lista();
+        for (int a = 0; a < this.lista.size(); a++){
+            amigos.agregar(this.lista.obtenerElementoEnPosicion(a));
+        }
+        return amigos.recorrerAmigos(encontrar, amigos);
+    }
 }

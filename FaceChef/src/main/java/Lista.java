@@ -168,6 +168,20 @@ public class Lista <E> {
         }
     }
     
+    public Lista recorrerAmigos (E elemento, Lista amigos){
+        for (int a = 0; a < this.size; a++){
+            System.out.println("si despues del for");
+            System.out.println(elemento+"  "+ this.obtenerElementoEnPosicion(a));
+            if (elemento == this.obtenerElementoEnPosicion(a)){
+                System.out.println("si");
+                return amigos;
+            }
+            amigos.agregar(this.obtenerElementoEnPosicion(a));
+        }
+        System.out.println ("no");
+        return amigos.recorrerAmigos(elemento, amigos);
+    }
+    
     public static void main (String [] args) {
         Lista lista = new Lista ();
         lista.agregar(2);

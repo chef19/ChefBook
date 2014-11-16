@@ -1,5 +1,12 @@
 public class Grafos {
     
+    private Lista <Nodo> listaNodos = new Lista <Nodo> ();
+    private Lista amigos;
+    
+    Grafos (){
+        amigos= new Lista();
+    }
+    
     public void agregarNodo (Nodo n){
         listaNodos.agregar (n);
     }
@@ -24,7 +31,25 @@ public class Grafos {
         System.out.println("no");
     }
     
-    private Lista <Nodo> listaNodos = new Lista <Nodo> ();
+    public Lista caminoEntre (Nodo actual, Nodo queLlama, Nodo buscado){
+        for (int a = 0; a < actual.lista.size();a++){
+            System.out.println("despues del for");
+            if (actual.lista.obtenerElementoEnPosicion(a) == buscado){
+                amigos.agregar(actual);
+                System.out.println("retorna aqui "+actual.lista.obtenerElementoEnPosicion(a)+" == "+ buscado);
+                return amigos;
+            }
+            else if (actual.lista.obtenerElementoEnPosicion(a) == queLlama){
+                if ((Nodo) actual.lista.obtenerElementoEnPosicion(a+1) == null){
+                    System.out.println("si es quien lo llamo");
+                    break;
+                }
+                return this.caminoEntre((Nodo) actual.lista.obtenerElementoEnPosicion(a+1), actual, buscado);
+            }
+            return this.caminoEntre((Nodo) actual.lista.obtenerElementoEnPosicion(a), actual, buscado);
+        }
+        return amigos;
+    }
     
     public static void main (String [] args){
         Grafos grafo = new Grafos();
@@ -37,9 +62,22 @@ public class Grafos {
         Nodo n4 = new Nodo(4);
         grafo.agregarNodo(n4);
         
-        grafo.agregarRelacion(n1, n2);
-        grafo.agregarRelacion(n1, n3);
         grafo.agregarRelacion(n1, n4);
-        grafo.eliminiarRelacion(n1, n3);
+        grafo.agregarRelacion(n1, n3);
+        grafo.agregarRelacion(n2, n4);
+        
+        
+        /*
+        System.out.println("n1 ");
+        n1.imprimir();
+        System.out.println("n2 ");
+        n2.imprimir();
+        System.out.println("n3 ");
+        n3.imprimir();
+        System.out.println("n4 ");
+        n4.imprimir();
+        */
+        System.out.println(grafo.caminoEntre(n1, n1, n2).size());
+        
     }
 }
