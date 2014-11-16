@@ -36,9 +36,49 @@
                 text-align: center;
                 width: 20%;
               }
+              div.img {
+                    margin: 10px;
+                    padding: 5px;
+                    border: 1px solid #0000ff;
+                    height: auto;
+                    width: auto;
+                    float: left;
+                    text-align: center;
+                }
+
+                div.img img {
+                    display: inline;
+                    margin: 1px;
+                    border: 1px solid #ffffff;
+                }
+
+                div.img a:hover img {
+                    border:1px solid #0000ff;
+                }
+
+                div.desc {
+                    text-align: center;
+                    font-weight: normal;
+                    width: 120px;
+                    margin: 5px;
+                }
+                .cargar {
+		position:absolute;
+		top: 330px;
+		left: 30px;
+                .subir {
+		position:absolute;
+		top: 330px;
+		left: 30px;
+	}
         </style>
     </h:head>
     <h:body>
+        <div class="img">
+            <a target="_blank">
+              <img src="faces/images/anonimo.jpg" alt="Klematis" width="290" height="280"/>
+            </a>
+          </div>
         <h:form>
             <h:messages>
                 
@@ -46,8 +86,8 @@
             
         </h:form>
         <form enctype="multipart/form-data" action="uploader.php" method="POST">
-        <input name="uploadedfile" type="file" />
-        <input type="submit" value="Subir archivo" />
+        <input class="cargar" name="uploadedfile" type="file" />
+        <input class="subir" type="submit" value="Subir archivo" />
         </form>
        <p><img id="bg" src="faces/images/perfil.jpg"/></p>
         
