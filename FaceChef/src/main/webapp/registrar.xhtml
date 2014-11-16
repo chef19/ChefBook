@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Pagina Registro</title>
+        <style type="text/css"> 
+            
+            .columna { display: block; float: left; width: 20%; margin: 0; padding: 0; } 
+            .columna input { display: block; width: 90%; margin: 0 auto; } 
+            label { 
+                font-size: 24px;
+                font-family: "Times New Roman", Times, serif;
+                display: block; 
+            } 
+            .campo { width: 200px;
+                     height: 30px; 
+                     margin-bottom: 20px; 
+                     border: 1px Solid #FFFF;
+            }
+            #bg{
+                position:fixed;
+                top:0;
+                left:0;
+                z-index:-1;
+                        }
+            #bg bg {
+                    opacity: 0.4;
+                    filter: alpha(opacity=70); /* For IE8 and earlier */
+                }
+            .botones {
+                font-size: 18px;
+                font-weight: bold;
+                border-top: 2px solid #CCC;
+                clear: both;
+                float: none;
+                padding: 1em 0;
+                margin-top: 1em;
+                text-align: center;
+                width: 20%;
+              }
+        </style>
+        <script> 
+            function valida() 
+            { 
+            if(form.): 
+            alert('Introduce dato correcto');
+            } 
+            </script> 
+    </h:head>
+    <h:body>
+        <h1>Quiero Registrarme!</h1>
+        <h:form id="form">
+            <h:messages>
+                <h:outputLabel class="label" for="b">Nombre  de Usuario :</h:outputLabel>
+                <h:inputText class="campo" id="nombre" value="#{Registro.b}"/>
+                <br/>
+                <h:outputLabel class="label" for="c" >Contraseña:</h:outputLabel>
+                <h:inputText class="campo" id="contraseña" value="#{Registro.c}"/>
+                <br/>
+                <h:outputLabel class="label" for="d">Carnet:</h:outputLabel>
+                <h:inputText class="campo" id="carnet" value="#{Registro.d}"/>
+                <br/>
+                <h:commandButton class="botones" value="REGISTRAR" action="#{Registro.mensaje()}"/>
+                <br/>
+                <h:commandButton class="botones" value="SALIR" action="faces/inicio.xhtml" />
+                <br/>
+            </h:messages>
+        </h:form>
+        <p><img id="bg" src="faces/images/image.jpg"/></p>
+        
+    </h:body>
+</html>
+

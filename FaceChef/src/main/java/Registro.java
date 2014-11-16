@@ -4,47 +4,54 @@ import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import javax.validation.constraints.NotNull;
 
 @Named (value="Registro")
 @RequestScoped
 public class Registro {
-    //@NotNull
-    private String b;
-    //@NotNull
-    private String c;
-    //@NotNull
-    private String d;
+    @NotNull
+    private String nombre;
+    @NotNull
+    private String contraseña;
+    @NotNull
+    private String carnet;
     
     public String getB() {
-        return b;
+        return nombre;
     }
 
-    public void setB(String b) {
-        this.b = b;
+    public void setB(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getC() {
-        return c;
+        return contraseña;
     }
 
-    public void setC(String c) {
-        this.c = c;
+    public void setC(String contraseña) {
+        this.contraseña = contraseña;
     }
     
     public String getD() {
-        return d;
+        return carnet;
     }
 
-    public void setD(String d) {
-        this.d = d;
+    public void setD(String carnet) {
+        this.carnet = carnet;
     }
     
     public void mensaje (){
-        ArrayList list = new ArrayList();
-        list.add(this.b);
-        list.add(this.c);
-        list.add(this.d);
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(b+" "+c+" "+d));
+        if("".equals(nombre) || "".equals(contraseña) || "".equals(carnet)){
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información necesaria faltante"));
     }
+        
+    else{
+        ArrayList list = new ArrayList();
+        list.add(this.nombre);
+        list.add(this.contraseña);
+        list.add(this.carnet);
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(nombre+" "+contraseña+" "+carnet));
+    }
+}
     
 }
