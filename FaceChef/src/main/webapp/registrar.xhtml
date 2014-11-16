@@ -14,7 +14,7 @@
                 display: block; 
             } 
             .campo { width: 200px;
-                     height: 30px; 
+                     height: 20px; 
                      margin-bottom: 20px; 
                      border: 1px Solid #FFFF;
             }
@@ -29,7 +29,7 @@
                     filter: alpha(opacity=70); /* For IE8 and earlier */
                 }
             .botones {
-                font-size: 18px;
+                font-size: 15px;
                 font-weight: bold;
                 border-top: 2px solid #CCC;
                 clear: both;
@@ -52,8 +52,17 @@
         <h1>Quiero Registrarme!</h1>
         <h:form id="form">
             <h:messages>
-                <h:outputLabel class="label" for="b">Nombre  de Usuario :</h:outputLabel>
+                <h:outputLabel class="label" for="b">Nombre Completo :</h:outputLabel>
                 <h:inputText class="campo" id="nombre" value="#{Registro.b}"/>
+                <br/>
+                <h:outputLabel class="label" for="b">Lugar de nacimiento:</h:outputLabel>
+                <h:inputText class="campo" id="nacimiento" />
+                <br/>
+                <h:outputLabel class="label" for="b">Fecha :</h:outputLabel>
+                <h:inputText class="campo" id="Fecha" />
+                <br/>
+                <h:outputLabel class="label" for="b">Correo :</h:outputLabel>
+                <h:inputText class="campo" id="Correo" />
                 <br/>
                 <h:outputLabel class="label" for="c" >Contraseña:</h:outputLabel>
                 <h:inputText class="campo" id="contraseña" value="#{Registro.c}"/>
