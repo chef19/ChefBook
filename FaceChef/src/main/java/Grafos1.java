@@ -1,10 +1,10 @@
-public class Grafos {
+public class Grafos1 {
     
     private Lista <Nodo> listaNodos = new Lista <Nodo> ();
     private Lista amigos;
     private Lista camino;
     
-    Grafos (){
+    Grafos1 (){
         amigos= new Lista();
         camino= new Lista();
     }
@@ -50,34 +50,46 @@ public class Grafos {
         return camino;
     }
     
-    public void falseRecorrido (){
-        for (int a =0; a< this.listaNodos.size();a++){
-            ((Nodo)this.listaNodos.obtenerElementoEnPosicion(a)).setRecorrido(false);
-        }
-    }
-    
     public Lista caminoEntre (Nodo actual, Nodo buscado){
+        System.out.println("el nodo actual es"+actual);
         camino.agregar(actual);
         for (int a =0; a< actual.lista.size();a++){
             for (int b =0; b< actual.lista.size();b++){
                 if (actual.lista.obtenerElementoEnPosicion(b)== buscado){
-                    this.falseRecorrido();
                     return camino;
                 }
             }    
-            actual.setRecorrido(true);
-            if ((Nodo)actual.lista.obtenerElementoEnPosicion(a)!=null){ // pregunta si hay mas elementos para llamar
-                return caminoEntre ((Nodo)actual.lista.obtenerElementoEnPosicion(a),buscado); //llama al siguiente que no se a recorrido
+            if (((Nodo)actual.lista.obtenerElementoEnPosicion(a)).isRecorrido()){ // pregunta si esta recorrido
+                if (((Nodo)actual.lista.obtenerElementoEnPosicion(a)) == buscado){
+                    return camino;
+                }
+                else if ((Nodo)actual.lista.obtenerElementoEnPosicion(a+1)==null){ // pregunta si hay mas elementos para llamar
+                    System.out.println("no hay mas elementos en este nodo continua al siguiente");
+                }
+                else{
+                    return caminoEntre ((Nodo)actual.lista.obtenerElementoEnPosicion(a+1),buscado); //llama al siguiente que no se a recorrido
+                }
             }
             else{
-                return camino;
+                actual.setRecorrido(true);
+                if (((Nodo)actual.lista.obtenerElementoEnPosicion(a)) == buscado){
+                    System.out.println("si lo encontro en el nodo "+actual);
+                    return camino;
+                }
+                else if ((Nodo)actual.lista.obtenerElementoEnPosicion(a)!=null){ // pregunta si hay mas elementos para llamar
+                    System.out.println("siguiente en la lista "+(Nodo)actual.lista.obtenerElementoEnPosicion(a));
+                    return caminoEntre ((Nodo)actual.lista.obtenerElementoEnPosicion(a),buscado); //llama al siguiente que no se a recorrido
+                }
+                else{
+                    return camino;
+                }
             }
         }
         return camino;
     }
     
     public static void main (String [] args){
-        Grafos grafo = new Grafos();
+        Grafos1 grafo = new Grafos1();
         Nodo n1 = new Nodo(1);
         grafo.agregarNodo(n1);
         Nodo n2 = new Nodo(2);
@@ -90,7 +102,7 @@ public class Grafos {
         grafo.agregarRelacion(n1, n4);
         grafo.agregarRelacion(n2, n3);
         grafo.agregarRelacion(n2, n4);
-
+        
         System.out.println("n1 "+n1);
         n1.imprimir();
         System.out.println("n2 "+n2);

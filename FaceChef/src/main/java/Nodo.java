@@ -1,9 +1,11 @@
 public class Nodo <E>{
         
     private E dato;
+    public boolean recorrido;
     public Lista <Nodo <E>> lista;
 
     public Nodo (E dato){
+        this.recorrido = false;
         this.dato = dato;
         this.lista = new Lista <Nodo <E>> ();
     }
@@ -12,6 +14,30 @@ public class Nodo <E>{
         return dato;
     }
 
+    public E getDato() {
+        return dato;
+    }
+
+    public void setDato(E dato) {
+        this.dato = dato;
+    }
+
+    public boolean isRecorrido() {
+        return recorrido;
+    }
+
+    public void setRecorrido(boolean recorrido) {
+        this.recorrido = recorrido;
+    }
+
+    public Lista<Nodo<E>> getLista() {
+        return lista;
+    }
+
+    public void setLista(Lista<Nodo<E>> lista) {
+        this.lista = lista;
+    }
+ 
     public void agregarRelacion (Nodo n){
         this.lista.agregar (n);
     }
@@ -23,12 +49,5 @@ public class Nodo <E>{
     public void imprimir (){
         this.lista.imprimir();
     }
-    
-    public Lista camino(E encontrar){
-        Lista amigos = new Lista();
-        for (int a = 0; a < this.lista.size(); a++){
-            amigos.agregar(this.lista.obtenerElementoEnPosicion(a));
-        }
-        return amigos.recorrerAmigos(encontrar, amigos);
-    }
+
 }
