@@ -34,19 +34,8 @@ public class Grafos {
     }
     
     public Lista camino (Nodo actual, Nodo buscado){
-        return aux_camino (actual.lista,buscado);
-    }
-    
-    public Lista aux_camino (Lista lista, Nodo buscado){
-        for (int a = 0; a < lista.size(); a++){
-            if (lista.obtenerElementoEnPosicion(a)== buscado){
-                return camino;
-            }
-            else {
-                camino.agregar((Nodo)lista.obtenerElementoEnPosicion(a));
-                return camino ((Nodo)lista.obtenerElementoEnPosicion(a),buscado);
-            }
-        }
+        this.caminoEntre(actual, buscado);
+        this.falseRecorrido();
         return camino;
     }
     
@@ -57,24 +46,46 @@ public class Grafos {
     }
     
     public Lista caminoEntre (Nodo actual, Nodo buscado){
+        //System.out.println("actual es: "+actual);
+        if (this.camino.obtenerElementoEnPosicion(this.camino.size()-1) == buscado){
+            return camino;
+        }
         camino.agregar(actual);
         for (int a =0; a< actual.lista.size();a++){
             for (int b =0; b< actual.lista.size();b++){
                 if (actual.lista.obtenerElementoEnPosicion(b)== buscado){
-                    this.falseRecorrido();
+                    ((Nodo)actual.lista.obtenerElementoEnPosicion(b)).setRecorrido(true);
+                    //System.out.println("termino en: "+actual);
+                    //this.falseRecorrido();
+                    camino.agregar((Nodo)actual.lista.obtenerElementoEnPosicion(b));
                     return camino;
                 }
-            }    
-            actual.setRecorrido(true);
-            if ((Nodo)actual.lista.obtenerElementoEnPosicion(a)!=null){ // pregunta si hay mas elementos para llamar
-                return caminoEntre ((Nodo)actual.lista.obtenerElementoEnPosicion(a),buscado); //llama al siguiente que no se a recorrido
+                //System.out.println("fue recorrido: "+actual);
+                
+                if (!((Nodo)actual.lista.obtenerElementoEnPosicion(b)).isRecorrido()){
+                    actual.setRecorrido(true);
+                    //System.out.println("no ha sido recorrido");
+                    this.caminoEntre((Nodo)actual.lista.obtenerElementoEnPosicion(b),buscado);
+                }
+                
             }
-            else{
-                return camino;
+            //System.out.println("se enciclo aqui");
+            //this.caminoEntre((Nodo)actual.lista.obtenerElementoEnPosicion(a),buscado);
+                
+                
+                /*
+                if ((Nodo)actual.lista.obtenerElementoEnPosicion(b)!=null){ // pregunta si hay mas elementos para llamar
+                    this.caminoEntre ((Nodo)actual.lista.obtenerElementoEnPosicion(b),buscado); //llama al siguiente que no se a recorrido
+                }
+                else{
+                    return camino;
+                }
+                this.caminoEntre((Nodo)actual.lista.obtenerElementoEnPosicion(b), buscado);*/
             }
-        }
         return camino;
-    }
+        }
+        
+    
     
     public static void main (String [] args){
         Grafos grafo = new Grafos();
@@ -87,22 +98,27 @@ public class Grafos {
         Nodo n4 = new Nodo(4);
         grafo.agregarNodo(n4);
         
+        Nodo n5 = new Nodo(5);
+        grafo.agregarNodo(n5);
+        
         grafo.agregarRelacion(n1, n4);
         grafo.agregarRelacion(n2, n3);
         grafo.agregarRelacion(n2, n4);
 
         System.out.println("n1 "+n1);
-        n1.imprimir();
         System.out.println("n2 "+n2);
-        //n2.imprimir();
         System.out.println("n3 "+n3);
-        //n3.imprimir();
         System.out.println("n4 "+n4);
-        //n4.imprimir();
-        System.out.println("..................");
-        grafo.caminoEntre(n3, n2).imprimir();
+        System.out.println("n5 "+n5);
+
+        //grafo.caminoEntre(n3, n2).imprimir();
         grafo.camino.vaciar();
         System.out.println("..................");
-        grafo.caminoEntre(n4, n3).imprimir();
+        
+        grafo.camino(n3, n5);
+        System.out.println(grafo.camino.hayCamino(n4));
+        grafo.camino.vaciar();
+        
+        
     }
 }

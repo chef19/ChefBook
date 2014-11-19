@@ -174,6 +174,13 @@ public class Lista <E> {
         this.size = 0;
     }
     
+    public boolean hayCamino (E n){
+        if (this.obtenerElementoEnPosicion(this.size-1) == n){
+            return true;
+        }
+        return false;
+    }
+    
     public static void main (String [] args) {
         Lista lista = new Lista ();
         lista.agregar(2);
