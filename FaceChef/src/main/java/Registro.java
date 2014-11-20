@@ -78,7 +78,9 @@ public class Registro {
     }
     else{
         Texto archivo = new Texto();
-        archivo.guardar(nombre, nombre+nl+carrera+nl+fecha+nl+correo+nl+contraseña+nl+carnet+nl);
+        Persona persona = new Persona (nombre,carrera,fecha,correo,contraseña,carnet);
+        Nodo nuevo = new Nodo (persona);
+        archivo.guardar(nombre, nombre+nl+carrera+nl+fecha+nl+correo+nl+contraseña+nl+carnet+nl+nuevo);
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Se registro correctamente "+nombre+" "+contraseña+" "+carnet));
     }
 }
