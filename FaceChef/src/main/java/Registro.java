@@ -14,16 +14,25 @@ public class Registro {
     @NotNull
     private String carrera;
     @NotNull
-    private String fecha;
+    private String edad;
     @NotNull
     private String correo;
     @NotNull
     private String contraseña;
     @NotNull
     private String carnet;
+    @NotNull
+    private String año;
+    @NotNull
+    private String telefono;
+    @NotNull
+    private String direccion;
+    @NotNull
+    private String foto;
+    
     
     String nl = System.getProperty("line.separator");
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -40,12 +49,12 @@ public class Registro {
         this.carrera = carrera;
     }
 
-    public String getFecha() {
-        return fecha;
+    public String getEdad() {
+        return edad;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
+    public void setEdad(String edad) {
+        this.edad = edad;
     }
 
     public String getCorreo() {
@@ -71,16 +80,57 @@ public class Registro {
     public void setCarnet(String carnet) {
         this.carnet = carnet;
     }
+
+    public String getAño() {
+        return año;
+    }
+
+    public void setAño(String año) {
+        this.año = año;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+
+    public String getNl() {
+        return nl;
+    }
+
+    public void setNl(String nl) {
+        this.nl = nl;
+    }
+    
     
     public void guardar (){
-        if("".equals(nombre) || "".equals(carrera) || "".equals(fecha)  || "".equals(correo)  || "".equals(contraseña)  || "".equals(carnet)){
+        if("".equals(nombre) || "".equals(carrera) || "".equals(edad)  || "".equals(correo)  || "".equals(contraseña)  || "".equals(carnet)){
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información necesaria faltante"));
     }
     else{
         Texto archivo = new Texto();
-        Persona persona = new Persona (nombre,carrera,fecha,correo,contraseña,carnet);
+        Persona persona = new Persona (nombre,carrera,edad,correo,contraseña,carnet);
         Nodo nuevo = new Nodo (persona);
-        archivo.guardar(nombre, nombre+nl+carrera+nl+fecha+nl+correo+nl+contraseña+nl+carnet+nl+nuevo);
+        archivo.guardar(nombre, nombre+nl+carrera+nl+edad+nl+correo+nl+contraseña+nl+carnet+nl+nuevo);
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Se registro correctamente "+nombre+" "+contraseña+" "+carnet));
     }
 }

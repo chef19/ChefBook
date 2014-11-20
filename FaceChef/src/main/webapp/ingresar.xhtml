@@ -69,11 +69,11 @@
         <h1>Iniciar Sesión</h1>
         <h:form>
             <h:messages>
-                <h:outputLabel class="label" for="contrasena" >Contraseña:</h:outputLabel>
-                <h:inputText class="caja1" id="contrasena" value="#{Registro.contraseña}"/>
+                <h:outputLabel class="label" for="correo" >Correo:</h:outputLabel>
+                <h:inputText class="caja1" id="correo" value="#{Ingreso.correo}"/>
                 <br/>
-                <h:outputLabel class="label" for="carnet" >Carnet:</h:outputLabel>
-                <h:inputText class="caja2" id="carnet" value="#{Registro.carnet}"/>
+                <h:outputLabel class="label" for="contraseña" >Contraseña:</h:outputLabel>
+                <h:inputText class="caja2" id="contraseña" value="#{Ingreso.contraseña}"/>
                 <br/>
                 <h:commandButton class="botones" value="INICIAR" action="faces/perfil.xhtml"/>
                 <br/>

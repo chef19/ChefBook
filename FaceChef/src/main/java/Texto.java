@@ -25,6 +25,10 @@ public class Texto {
         }
         return linea; 
     }
+    
+    public void leer_ingreso(){
+    
+    }
 
     public static void main(String []args) throws IOException{
         Texto t = new Texto ();
