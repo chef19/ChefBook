@@ -78,7 +78,7 @@ public class Registro {
     }
     else{
         Texto archivo = new Texto();
-        archivo.guardar(nombre, nombre+nl+carrera+nl+fecha+correo+contraseña+carnet+nl);
+        archivo.guardar(nombre, nombre+nl+carrera+nl+fecha+nl+correo+nl+contraseña+nl+carnet+nl);
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Se registro correctamente "+nombre+" "+contraseña+" "+carnet));
     }
 }

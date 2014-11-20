@@ -11,7 +11,7 @@ public class Texto {
     public String guardar(String texto, String dato){
         String linea = null;
         try{
-            File archivo=new File(texto+".txt");
+            File archivo=new File(System.getProperty("user.dir")+texto+".txt");
             FileWriter escribir = new FileWriter(archivo,true);
             escribir.write(dato);
             escribir.close();
