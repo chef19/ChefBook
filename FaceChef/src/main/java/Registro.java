@@ -21,7 +21,9 @@ public class Registro {
     private String contraseña;
     @NotNull
     private String carnet;
-
+    
+    String nl = System.getProperty("line.separator");
+    
     public String getNombre() {
         return nombre;
     }
@@ -70,16 +72,14 @@ public class Registro {
         this.carnet = carnet;
     }
     
-    public void mensaje (){
-        if("".equals(nombre) || "".equals(contraseña) || "".equals(carnet)){
+    public void guardar (){
+        if("".equals(nombre) || "".equals(carrera) || "".equals(fecha)  || "".equals(correo)  || "".equals(contraseña)  || "".equals(carnet)){
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información necesaria faltante"));
     }
     else{
-        ArrayList list = new ArrayList();
-        list.add(this.nombre);
-        list.add(this.contraseña);
-        list.add(this.carnet);
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(nombre+" "+contraseña+" "+carnet));
+        Texto archivo = new Texto();
+        archivo.guardar(nombre, nombre+nl+carrera+nl+fecha+correo+contraseña+carnet+nl);
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Se registro correctamente "+nombre+" "+contraseña+" "+carnet));
     }
 }
     

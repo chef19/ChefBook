@@ -6,30 +6,29 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 
 public class Texto {
+    String nl = System.getProperty("line.separator");
     
-    public String hola(String texto){
+    public String guardar(String texto, String dato){
         String linea = null;
         try{
-        File archivo=new File(texto+".txt");
-        FileWriter escribir = new FileWriter(archivo,true);
-        escribir.write("MONUKUMA");
-        escribir.close();
-        FileReader fr = new FileReader (archivo);
-        BufferedReader br = new BufferedReader(fr);
-        linea=br.readLine();
-        System.out.println(System.getProperty("user.dir"));
-        return linea;
+            File archivo=new File(texto+".txt");
+            FileWriter escribir = new FileWriter(archivo,true);
+            escribir.write(dato);
+            escribir.close();
+            FileReader fr = new FileReader (archivo);
+            BufferedReader br = new BufferedReader(fr);
+            linea=br.readLine();
+            return linea;
         }
         catch(Exception e){
-        System.out.println("Error al escribir");
+            System.out.println("Error al escribir");
         }
-        System.out.println("yolo");
         return linea; 
     }
 
     public static void main(String []args) throws IOException{
         Texto t = new Texto ();
-        System.out.println(t.hola("hola"));
+        t.guardar("mel", "Melvin Brenes");
     }    
     
 }
