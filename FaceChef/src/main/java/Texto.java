@@ -7,41 +7,49 @@ import java.io.FileNotFoundException;
 
 public class Texto {
     String nl = System.getProperty("line.separator");
-    File archivo = null;
     
-    public String guardar(String texto, String dato){
+    
+    public void guardar(String texto, String dato){
         String linea = null;
         try{
-            archivo=new File(System.getProperty("user.dir")+texto+".txt");
+            File archivo=new File(System.getProperty("user.dir")+texto+".txt");
             FileWriter escribir = new FileWriter(archivo,true);
             escribir.write(dato);
             escribir.close();
-            FileReader fr = new FileReader (archivo);
-            BufferedReader br = new BufferedReader(fr);
-            linea=br.readLine();
-            return linea;
         }
         catch(Exception e){
             System.out.println("Error al escribir");
         }
-        return linea; 
     }
     
-    public void leer_ingreso(String nombre) throws FileNotFoundException{
+    public boolean leer_ingreso(String nombre, String correo, String contraseña) throws FileNotFoundException{
         String linea = null;
+        int contador=0;
         try{
-            archivo=new File(System.getProperty("user.dir")+nombre+".txt");
+            File archivo=new File(System.getProperty("user.dir")+nombre+".txt");
             FileReader fr = new FileReader (archivo);
             BufferedReader br = new BufferedReader(fr);
+            while((linea=br.readLine())!=null){
+                if (linea.equals(correo)){
+                    contador++;
+                }
+                else if (linea.equals(contraseña)){
+                    contador++;
+                }
+                else if (contador == 2){
+                    return true;
+                }
+            }     
         }
         catch(Exception e){
-            System.out.println("Error al escribir");
+            System.out.println("Error al escribir2");
         }
+        return false;
     }
 
     public static void main(String []args) throws IOException{
         Texto t = new Texto ();
-        t.guardar("mel", "Melvin Brenes");
+        System.out.println(t.leer_ingreso("mel","mell9413@hotmail.com","contraseña"));
     }    
     
 }

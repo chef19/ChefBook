@@ -33,7 +33,7 @@
               }
               .acomodando{
                     position: absolute;
-                    top: 170px;
+                    top: 215px;
                     right: 750px;
                     font-size: 15px;
                     font-weight: bold;
@@ -63,17 +63,29 @@
                      margin-bottom: 20px; 
                      border: 1px Solid #FFFF;
                 }
+                .caja3{
+                    position: absolute;
+                    top: 170px;
+                    right: 950px;
+                    width: 200px;
+                     height: 20px; 
+                     margin-bottom: 20px; 
+                     border: 1px Solid #FFFF;
+                }
         </style>
     </h:head>
     <h:body>
         <h1>Iniciar Sesión</h1>
         <h:form>
             <h:messages>
+                <h:outputLabel class="label" for="nombre" >Nombre</h:outputLabel>
+                <h:inputText class="caja1" id="nombre" value="#{Ingreso.nombre}"/>
+                <br/>
                 <h:outputLabel class="label" for="correo" >Correo:</h:outputLabel>
-                <h:inputText class="caja1" id="correo" value="#{Ingreso.correo}"/>
+                <h:inputText class="caja2" id="correo" value="#{Ingreso.correo}"/>
                 <br/>
                 <h:outputLabel class="label" for="contraseña" >Contraseña:</h:outputLabel>
-                <h:inputText class="caja2" id="contraseña" value="#{Ingreso.contraseña}"/>
+                <h:inputText class="caja3" id="contraseña" value="#{Ingreso.contraseña}"/>
                 <br/>
                 <h:commandButton class="botones" value="INICIAR" action="faces/perfil.xhtml"/>
                 <br/>

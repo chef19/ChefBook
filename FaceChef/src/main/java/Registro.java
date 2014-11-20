@@ -122,8 +122,8 @@ public class Registro {
     
     public void guardar (){
         if("".equals(nombre) || "".equals(carrera) || "".equals(edad)  || "".equals(correo)  || "".equals(contraseña)  || 
-           "".equals(carnet) || "".equals(año) || "".equals(telefono) || "".equals(direccion)  || "".equals(foto)){
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información necesaria faltante"));
+           "".equals(carnet) || "".equals(año) || "".equals(telefono) || "".equals(direccion)){
+           FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información necesaria faltante"));
     }
     else{
         Texto archivo = new Texto();
