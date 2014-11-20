@@ -9,6 +9,7 @@
                 font-size: 24px;
                 font-family: "Times New Roman", Times, serif;
                 display: block; 
+                color: white;
             } 
             .campo { width: 200px;
                      height: 30px; 
@@ -93,7 +94,20 @@
           </div>
         <h:form>
             <h:messages>
-                
+            <h:outputLabel class="label" for="b">Nombre Completo:</h:outputLabel>
+            <br/>
+            <h:outputLabel class="label" for="b">Edad:</h:outputLabel>
+            <br/>
+            <h:outputLabel class="label" for="b">Carrera Actual:</h:outputLabel>
+            <br/>
+            <h:outputLabel class="label" for="b">Año de Carrera:</h:outputLabel>
+            <br/>
+            <h:outputLabel class="label" for="b">Direccion:</h:outputLabel>
+            <br/>
+            <h:outputLabel class="label" for="b">Telefono:</h:outputLabel>
+            <br/>
+            <h:outputLabel class="label" for="b">Correo Electronico:</h:outputLabel>
+            <br/>
             </h:messages>
             <h:commandButton class="salir" value="Cerrar sesión" action="faces/ingresar.xhtml" />
             <br/>
@@ -105,7 +119,6 @@
         <input class="subir" type="submit" value="Subir archivo" />
         </form>
        <p><img id="bg" src="faces/images/perfil.jpg"/></p>
-        
         
     </h:body>
 </html>
