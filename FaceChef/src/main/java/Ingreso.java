@@ -40,13 +40,14 @@ public class Ingreso {
         this.nombre = nombre;
     }    
     
-    public void ingreso() throws FileNotFoundException{
+    public String ingreso() throws FileNotFoundException{
         Texto archivo = new Texto ();
-        if (archivo.leer_ingreso(nombre, correo, contraseña)){
-            
+        if (archivo.leer_ingreso(nombre, correo, contraseña)== 2){
+            return "faces/perfil.xhtml";
         }
         else{
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Datos incorrectos, ingrese nuevamente"));
         }
+        return null;
     }
 }

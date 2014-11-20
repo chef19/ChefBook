@@ -87,7 +87,7 @@
                 <h:outputLabel class="label" for="contraseña" >Contraseña:</h:outputLabel>
                 <h:inputText class="caja3" id="contraseña" value="#{Ingreso.contraseña}"/>
                 <br/>
-                <h:commandButton class="botones" value="INICIAR" action="faces/perfil.xhtml"/>
+                <h:commandButton class="botones" value="INICIAR" action="#{Ingreso.ingreso()}"/>
                 <br/>
                 <h:commandButton class="acomodando" value="SALIR" action="faces/inicio.xhtml" />
                 <br/>

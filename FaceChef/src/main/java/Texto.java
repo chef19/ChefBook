@@ -22,7 +22,7 @@ public class Texto {
         }
     }
     
-    public boolean leer_ingreso(String nombre, String correo, String contraseña) throws FileNotFoundException{
+    public int leer_ingreso(String nombre, String correo, String contraseña) throws FileNotFoundException{
         String linea = null;
         int contador=0;
         try{
@@ -37,14 +37,14 @@ public class Texto {
                     contador++;
                 }
                 else if (contador == 2){
-                    return true;
+                    return contador;
                 }
             }     
         }
         catch(Exception e){
             System.out.println("Error al escribir2");
         }
-        return false;
+        return contador;
     }
 
     public static void main(String []args) throws IOException{
