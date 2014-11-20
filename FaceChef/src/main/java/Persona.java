@@ -9,18 +9,58 @@ public class Persona {
     public String correo;
     public String contraseña;
     public String carnet;
+    public String año;
+    public String telefono;
+    public String direccion;
+    public String foto;
     
     /**
      * Constructor de la clase
      * Se asignan los datos de los clientes 
      */
-    public Persona(String nombre, String carrera, String fecha, String correo, String contraseña, String carnet){
+    public Persona(String nombre, String carrera, String edad, String correo, String contraseña, String carnet, String año, String telefono, String direccion, String foto){
         this.nombre = nombre;
         this.carrera = carrera;
-        this.fecha = fecha;
+        this.fecha = edad;
         this.correo = correo;
         this.contraseña = contraseña;
         this.carnet= carnet;
+        this.año = año;
+        this.telefono=telefono;
+        this.direccion=direccion;
+        this.foto=foto;
+    }
+
+    public String getAño() {
+        return año;
+    }
+
+    public void setAño(String año) {
+        this.año = año;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     public String getNombre() {

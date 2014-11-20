@@ -7,11 +7,12 @@ import java.io.FileNotFoundException;
 
 public class Texto {
     String nl = System.getProperty("line.separator");
+    File archivo = null;
     
     public String guardar(String texto, String dato){
         String linea = null;
         try{
-            File archivo=new File(System.getProperty("user.dir")+texto+".txt");
+            archivo=new File(System.getProperty("user.dir")+texto+".txt");
             FileWriter escribir = new FileWriter(archivo,true);
             escribir.write(dato);
             escribir.close();
@@ -26,8 +27,16 @@ public class Texto {
         return linea; 
     }
     
-    public void leer_ingreso(){
-    
+    public void leer_ingreso(String nombre) throws FileNotFoundException{
+        String linea = null;
+        try{
+            archivo=new File(System.getProperty("user.dir")+nombre+".txt");
+            FileReader fr = new FileReader (archivo);
+            BufferedReader br = new BufferedReader(fr);
+        }
+        catch(Exception e){
+            System.out.println("Error al escribir");
+        }
     }
 
     public static void main(String []args) throws IOException{

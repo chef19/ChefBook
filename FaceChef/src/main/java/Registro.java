@@ -1,5 +1,3 @@
-
-//import com.sun.istack.internal.NotNull;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -123,14 +121,15 @@ public class Registro {
     
     
     public void guardar (){
-        if("".equals(nombre) || "".equals(carrera) || "".equals(edad)  || "".equals(correo)  || "".equals(contraseña)  || "".equals(carnet)){
+        if("".equals(nombre) || "".equals(carrera) || "".equals(edad)  || "".equals(correo)  || "".equals(contraseña)  || 
+           "".equals(carnet) || "".equals(año) || "".equals(telefono) || "".equals(direccion)  || "".equals(foto)){
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información necesaria faltante"));
     }
     else{
         Texto archivo = new Texto();
-        Persona persona = new Persona (nombre,carrera,edad,correo,contraseña,carnet);
+        Persona persona = new Persona (nombre,  carrera,  edad,  correo, contraseña, carnet, año, telefono, direccion, foto);
         Nodo nuevo = new Nodo (persona);
-        archivo.guardar(nombre, nombre+nl+carrera+nl+edad+nl+correo+nl+contraseña+nl+carnet+nl+nuevo);
+        archivo.guardar(nombre, nombre+nl+ carrera+nl+  edad+nl+  correo+nl+ contraseña+nl+ carnet+nl+ año+nl+ telefono+nl+ direccion+nl+ foto+nl+nuevo);
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Se registro correctamente "+nombre+" "+contraseña+" "+carnet));
     }
 }
