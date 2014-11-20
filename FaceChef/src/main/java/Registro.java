@@ -6,7 +6,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.validation.constraints.NotNull;
 
-@Named (value="Registro")
+@Named (value="hola")
 @RequestScoped
 public class Registro {
     @NotNull
