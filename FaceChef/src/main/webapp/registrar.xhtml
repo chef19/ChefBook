@@ -1,155 +1,37 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
-        <title>Pagina Registro</title>
-        <style type="text/css"> 
-            
-            .columna { display: block; float: left; width: 20%; margin: 0; padding: 0; } 
-            .columna input { display: block; width: 90%; margin: 0 auto; } 
-            label { 
-                font-size: 24px;
-                font-family: "Times New Roman", Times, serif;
-                display: block; 
-            } 
-            #bg{
-                position:fixed;
-                top:0;
-                left:0;
-                z-index:-1;
-                        }
-            #bg bg {
-                    opacity: 0.4;
-                    filter: alpha(opacity=70); /* For IE8 and earlier */
-                }
-            .botones {
-                font-size: 15px;
-                font-weight: bold;
-                border-top: 2px solid #CCC;
-                clear: both;
-                float: none;
-                padding: 1em 0;
-                margin-top: 1em;
-                text-align: center;
-                width: 20%;
-              }
-              .nombreC{
-                  position:fixed;
-                  top: 80px;
-                  left: 250px;
-                  width: 200px;
-                  height: 20px; 
-                  margin-bottom: 20px; 
-                  border: 1px Solid #FFFF;
-              }
-              .nacimientoC{
-                  position:fixed;
-                  top: 125px;
-                  left: 250px;
-                  width: 200px;
-                  height: 20px; 
-                  margin-bottom: 20px; 
-                  border: 1px Solid #FFFF;
-              }
-              .fechaC{
-                  position:fixed;
-                  top: 165px;
-                  left: 250px;
-                  width: 200px;
-                  height: 20px; 
-                  margin-bottom: 20px; 
-                  border: 1px Solid #FFFF;
-              }
-              .correoC{
-                  position:fixed;
-                  top: 206px;
-                  left: 250px;
-                  width: 200px;
-                  height: 20px; 
-                  margin-bottom: 20px; 
-                  border: 1px Solid #FFFF;
-              }
-              .correoC{
-                  position:fixed;
-                  top: 206px;
-                  left: 250px;
-                  width: 200px;
-                  height: 20px; 
-                  margin-bottom: 20px; 
-                  border: 1px Solid #FFFF;
-              }
-              .contraseñaC{
-                  position:fixed;
-                  top: 257px;
-                  left: 250px;
-                  width: 200px;
-                  height: 20px; 
-                  margin-bottom: 20px; 
-                  border: 1px Solid #FFFF;
-              }
-              .carnetC{
-                  position:fixed;
-                  top: 307px;
-                  left: 250px;
-                  width: 200px;
-                  height: 20px; 
-                  margin-bottom: 20px; 
-                  border: 1px Solid #FFFF;
-              }
-              .salir1 {
-                position:fixed;
-                top: 350px;
-                left: 330px;
-                font-size: 15px;
-                font-weight: bold;
-                border-top: 2px solid #CCC;
-                clear: both;
-                float: none;
-                padding: 1em 0;
-                margin-top: 1em;
-                text-align: center;
-                width: 20%;
-              }
-        </style>
-        <script> 
-            function valida() 
-            { 
-            if(form.): 
-            alert('Introduce dato correcto');
-            } 
-            </script> 
-    </h:head>
-    <h:body>
-        <h1>Registro en la Red Social</h1>
-        <h:form id="form">
-            <h:messages>
-                <h:outputLabel class="label" for="b">Nombre Completo :</h:outputLabel>
-                <h:inputText class="nombreC" id="nombre" value="#{Registro.b}"/>
-                <br/>
-                <h:outputLabel class="label" for="b">Lugar de nacimiento:</h:outputLabel>
-                <h:inputText class="nacimientoC" id="nacimiento" />
-                <br/>
-                <h:outputLabel class="label" for="b">Fecha :</h:outputLabel>
-                <h:inputText class="fechaC" id="Fecha" />
-                <br/>
-                <h:outputLabel class="label" for="b">Correo :</h:outputLabel>
-                <h:inputText class="correoC" id="Correo" />
-                <br/>
-                <h:outputLabel class="label" for="c" >Contraseña:</h:outputLabel>
-                <h:inputText class="contraseñaC" id="contraseña" value="#{Registro.c}"/>
-                <br/>
-                <h:outputLabel class="label" for="d">Carnet:</h:outputLabel>
-                <h:inputText class="carnetC" id="carnet" value="#{Registro.d}"/>
-                <br/>
-                <h:commandButton class="botones" value="REGISTRAR" action="#{Registro.mensaje()}"/>
-                <br/>
-                <h:commandButton class="salir1" value="SALIR" action="faces/inicio.xhtml" />
-                <br/>
-            </h:messages>
-        </h:form>
-        <p><img id="bg" src="faces/images/image.jpg"/></p>
-        
-    </h:body>
-</html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Registrar</title>
+    </head>
+    <body>
+    	<link rel="stylesheet" type="text/css" href="Style.css"/>
+        <h1>Pagina de Registro</h1>
+        <div>
+        	<form>
+                <ul>
+                    <p><input type ="text" placeholder="Nombre"/><input type ="text" placeholder="Edad"/></p>
+                    <p><input type ="text" placeholder="Correo Electronico"/><input type ="text" placeholder="Carrera Actual"/> </p>
+                    <p><input type ="text" placeholder="Año de Carrera"/><input type ="text" placeholder="Numero de Telefono"/> </p>
+                    <p><textarea rows="10" cols="35" placeholder="Direccion"></textarea> </p>
 
+			<form method="post" enctype="multipart/form-data" action="subir_imagen.php">
+			 Codigo: <input id="txt_codigo" type="text" name="codigo"/>
+			 
+			 Descripcion: <input id="txt_descripcion" type="text" name="descripcion"/>
+			 
+			 <input id="file_url" type="file" name="foto"/>
+			 
+			  <input type="submit" value="Guardar"/>
+			</form>
+
+                    <p><button class="submit" type ="submit">Registrar</button></p>
+     
+                </ul>
+                 
+            </form>
+        </div>
+        <a href="index.jsp">Pagina de inicio</a>
+    </body>
+</html>
