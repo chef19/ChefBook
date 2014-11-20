@@ -43,7 +43,7 @@
                   margin-bottom: 20px; 
                   border: 1px Solid #FFFF;
               }
-              .nacimientoC{
+              .edadC{
                   position:fixed;
                   top: 125px;
                   left: 250px;
@@ -52,7 +52,7 @@
                   margin-bottom: 20px; 
                   border: 1px Solid #FFFF;
               }
-              .fechaC{
+              .carreraC{
                   position:fixed;
                   top: 165px;
                   left: 250px;
@@ -97,9 +97,50 @@
                   margin-bottom: 20px; 
                   border: 1px Solid #FFFF;
               }
+              .añoC{
+                  position:fixed;
+                  top: 350px;
+                  left: 250px;
+                  width: 200px;
+                  height: 20px; 
+                  margin-bottom: 20px; 
+                  border: 1px Solid #FFFF;
+              }
+              .telefonoC{
+                  position:fixed;
+                  top: 394px;
+                  left: 250px;
+                  width: 200px;
+                  height: 20px; 
+                  margin-bottom: 20px; 
+                  border: 1px Solid #FFFF;
+              }
+              .direccionC{
+                  position:fixed;
+                  top: 440px;
+                  left: 250px;
+                  width: 200px;
+                  height: 100px; 
+                  margin-bottom: 20px; 
+                  border: 1px Solid #FFFF;
+              }
+              .registrar1 {
+                position:fixed;
+                top: 540px;
+                left: 0px;
+                font-size: 15px;
+                font-weight: bold;
+                border-top: 2px solid #CCC;
+                clear: both;
+                float: none;
+                padding: 1em 0;
+                margin-top: 1em;
+                text-align: center;
+                width: 20%;
+              }
               .salir1 {
                 position:fixed;
-                top: 350px;
+                top: 540px;
                 left: 330px;
                 font-size: 15px;
                 font-weight: bold;
@@ -127,14 +168,11 @@
                 <h:outputLabel class="label" for="nombre">Nombre Completo :</h:outputLabel>
                 <h:inputText class="nombreC" id="nombre" value="#{Registro.nombre}"/>
                 <br/>
-                <h:outputLabel class="label" for="carrera">Carrera que estudia :</h:outputLabel>
-                <h:inputText class="nacimientoC" id="carrera" value="#{Registro.carrera}"/>
+                <h:outputLabel class="label" for="edad">Edad :</h:outputLabel>
+                <h:inputText class="edadC" id="nacimiento" value="#{Registro.edad}"/>
                 <br/>
-                <h:outputLabel class="label" for="año">Año de carrera :</h:outputLabel>
-                <h:inputText class="nacimientoC" id="año" value="#{Registro.año}"/>
-                <br/>
-                <h:outputLabel class="label" for="fecha">Edad :</h:outputLabel>
-                <h:inputText class="fechaC" id="Fecha" value="#{Registro.edad}"/>
+                <h:outputLabel class="label" for="carrera">Carrera :</h:outputLabel>
+                <h:inputText class="carreraC" id="carrera" value="#{Registro.carrera}"/>
                 <br/>
                 <h:outputLabel class="label" for="correo">Correo :</h:outputLabel>
                 <h:inputText class="correoC" id="Correo" value="#{Registro.correo}"/>
@@ -145,7 +183,16 @@
                 <h:outputLabel class="label" for="carnet">Carnet:</h:outputLabel>
                 <h:inputText class="carnetC" id="carnet" value="#{Registro.carnet}"/>
                 <br/>
-                <h:commandButton class="botones" value="REGISTRAR" action="#{Registro.guardar()}"/>
+                <h:outputLabel class="label" for="año">Año :</h:outputLabel>
+                <h:inputText class="añoC" id="año" value="#{Registro.carnet}"/>
+                <br/>
+                <h:outputLabel class="label" for="Telefono">Telefono :</h:outputLabel>
+                <h:inputText class="telefonoC" id="telefono" value="#{Registro.carnet}"/>
+                <br/>
+                <h:outputLabel class="label" for="direccion">Dirreción :</h:outputLabel>
+                <h:inputText class="direccionC" id="direccion" value="#{Registro.carnet}"/>
+                <br/>
+                <h:commandButton class="registrar1" value="REGISTRAR" action="#{Registro.mensaje()}"/>
                 <br/>
                 <h:commandButton class="salir1" value="SALIR" action="faces/inicio.xhtml" />
                 <br/>
@@ -155,4 +202,3 @@
         
     </h:body>
 </html>
-
