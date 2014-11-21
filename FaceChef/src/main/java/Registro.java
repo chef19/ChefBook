@@ -111,9 +111,6 @@ public class Registro {
     public void setNl(String nl) {
         this.nl = nl;
     }
-    public void imagen(String foto){
-        this.foto=foto;
-    }
     
     public void iniciar (){
         lista = new Lista ();

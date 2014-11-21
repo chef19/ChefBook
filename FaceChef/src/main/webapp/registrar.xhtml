@@ -120,13 +120,13 @@
                   top: 440px;
                   left: 250px;
                   width: 200px;
-                  height: 100px; 
+                  height: 40px; 
                   margin-bottom: 20px; 
                   border: 1px Solid #FFFF;
               }
               .registrar1 {
                 position:fixed;
-                top: 540px;
+                top: 59c0px;
                 left: 0px;
                 font-size: 15px;
                 font-weight: bold;
@@ -140,7 +140,7 @@
               }
               .salir1 {
                 position:fixed;
-                top: 540px;
+                top: 590px;
                 left: 330px;
                 font-size: 15px;
                 font-weight: bold;
@@ -212,7 +212,14 @@
                 <br/>
             </h:messages>
         </h:form>
-        <input class="salir2" title="FOTOOOOOO" name="uploadedfile" type="file" ondblclick="#{Registro.foto}"/>
+        <fieldset>
+            <form enctype="multipart/form-data" >
+            <legend>Using the file input file</legend>>
+            <input type="file" name="" />
+            <input type="submit" value="upload"/>
+            
+            </form>>
+        </fieldset>>
         <p><img id="bg" src="faces/images/image.jpg"/></p>
         
     </h:body>
