@@ -46,6 +46,26 @@ public class Texto {
         }
         return contador;
     }
+    
+    public String perfil(String nombre, int dato) throws FileNotFoundException{
+        String linea = null;
+        int contador=0;
+        try{
+            File archivo=new File(System.getProperty("user.dir")+nombre+".txt");
+            FileReader fr = new FileReader (archivo);
+            BufferedReader br = new BufferedReader(fr);
+            while((linea=br.readLine())!=null){
+                if (contador == dato){
+                    return linea;
+                }
+                contador++;
+            }
+        }
+        catch(Exception e){
+            System.out.println("Error al escribir2");
+        }
+        return null;
+    }
 
     public static void main(String []args) throws IOException{
         Texto t = new Texto ();

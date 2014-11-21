@@ -95,18 +95,25 @@
         <h:form>
             <h:messages>
             <h:outputLabel class="label" for="b">Nombre Completo:</h:outputLabel>
+            <h:outputLabel class="label" for="b" value="#{Ingreso.nombre}"></h:outputLabel>
             <br/>
             <h:outputLabel class="label" for="b">Edad:</h:outputLabel>
+            <h:outputLabel class="label" for="b" value="#{Ingreso.edad}"></h:outputLabel>
             <br/>
             <h:outputLabel class="label" for="b">Carrera Actual:</h:outputLabel>
+            <h:outputLabel class="label" for="b" value="#{Ingreso.carrera}"></h:outputLabel>
             <br/>
             <h:outputLabel class="label" for="b">Año de Carrera:</h:outputLabel>
+            <h:outputLabel class="label" for="b" value="#{Ingreso.año}"></h:outputLabel>
             <br/>
             <h:outputLabel class="label" for="b">Direccion:</h:outputLabel>
+            <h:outputLabel class="label" for="b" value="#{Ingreso.direccion}"></h:outputLabel>
             <br/>
             <h:outputLabel class="label" for="b">Telefono:</h:outputLabel>
+            <h:outputLabel class="label" for="b" value="#{Ingreso.telefono}"></h:outputLabel>
             <br/>
             <h:outputLabel class="label" for="b">Correo Electronico:</h:outputLabel>
+            <h:outputLabel class="label" for="b" value="#{Ingreso.correo}"></h:outputLabel>
             <br/>
             </h:messages>
             <h:commandButton class="salir" value="Cerrar sesión" action="faces/ingresar.xhtml" />
