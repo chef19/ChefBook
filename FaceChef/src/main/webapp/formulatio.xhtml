@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <form action="guardar.php" enctype="multipart/form-data">
+            <fieldset>
+            <legend>Información personal</legend>
+            First name: <input type="text" name="nombre" maxlength="20" size="20" />
+            Last name: <input type="text" name="apellido" maxlength="15" size="15" />
+            Password: <input type="password" name="pass" maxlength="15" size="15" />
+            Gender:
+            <input type="radio" name="gender" value="masculino" checked="checked" />Masculino
+            <input type="radio" name="gender" value="femenino" />Femenino
+            Picture:<input name="foto" type="file" accept="image/gif" />
+            </fieldset>
+            <fieldset>
+            <legend>Intereses</legend>
+            <input type="checkbox" name="intereses" checked="checked" />Deportes
+            <input type="checkbox" name="intereses" checked="checked" />Películas
+            <input type="checkbox" name="intereses" />Viajes
+            <input type="checkbox" name="intereses" />Arte
+            <input type="checkbox" name="intereses" />Autos
+            </fieldset>
+            <input type="reset" value="Reestablecer formulario" />
+            <input type="submit" value="Enviar formulario" />
+            <input type="hidden" name="email" value="teckevin_16@hotmail.com" />
+        </form>
+    </body>
+</html>

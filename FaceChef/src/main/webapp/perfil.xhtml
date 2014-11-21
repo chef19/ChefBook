@@ -6,6 +6,7 @@
         <title>FaceChef</title>
         <style type="text/css"> 
             label { 
+                left: 350px;
                 font-size: 24px;
                 font-family: "Times New Roman", Times, serif;
                 display: block; 
@@ -80,9 +81,60 @@
 	}
         .busqueda{
             position: absolute;
-            top:1px;
-            left: 1px;
+            top:380px;
+            left: 30px;
             font-size: 23px;
+        }
+        .buscar{
+            position: absolute;
+            top:386px;
+            left: 340px;
+          
+        }
+        .telefono{
+            position: absolute;
+            top:48px;
+            left: 840px;
+        }
+        .telefonoD{
+            position: absolute;
+            top:48px;
+            left: 950px;
+        }
+        .correoE{
+            position: absolute;
+            top:93px;
+            left: 840px;
+        }
+        .correoD{
+            position: absolute;
+            top:93px;
+            left: 1040px;
+        }
+        .nombreD{
+            position: absolute;
+            top:15px;
+            left: 530px;
+        }
+        .edadD{
+            position: absolute;
+            top:55px;
+            left: 530px;
+        }
+        .carreraD{
+            position: absolute;
+            top:100px;
+            left: 530px;
+        }
+        .añoD{
+            position: absolute;
+            top:145px;
+            left: 530px;
+        }
+        .direccionD{
+            position: absolute;
+            top:190px;
+            left: 530px;
         }
         </style>
     </h:head>
@@ -94,37 +146,33 @@
           </div>
         <h:form>
             <h:messages>
-            <h:outputLabel class="label" for="b">Nombre Completo:</h:outputLabel>
-            <h:outputLabel class="label" for="b" value="#{Ingreso.nombre}"></h:outputLabel>
-            <br/>
+                <p><h:outputLabel class="label" for="b">Nombre Completo:</h:outputLabel>
+            <h:outputLabel class="nombreD" for="b" value="#{Ingreso.nombre}"></h:outputLabel></p>
             <h:outputLabel class="label" for="b">Edad:</h:outputLabel>
-            <h:outputLabel class="label" for="b" value="#{Ingreso.edad}"></h:outputLabel>
+            <h:outputLabel class="edadD" for="b" value="#{Ingreso.edad}"></h:outputLabel>
             <br/>
             <h:outputLabel class="label" for="b">Carrera Actual:</h:outputLabel>
-            <h:outputLabel class="label" for="b" value="#{Ingreso.carrera}"></h:outputLabel>
+            <h:outputLabel class="carreraD" for="b" value="#{Ingreso.carrera}"></h:outputLabel>
             <br/>
             <h:outputLabel class="label" for="b">Año de Carrera:</h:outputLabel>
-            <h:outputLabel class="label" for="b" value="#{Ingreso.año}"></h:outputLabel>
+            <h:outputLabel class="añoD" for="b" value="#{Ingreso.año}"></h:outputLabel>
             <br/>
             <h:outputLabel class="label" for="b">Direccion:</h:outputLabel>
-            <h:outputLabel class="label" for="b" value="#{Ingreso.direccion}"></h:outputLabel>
+            <h:outputLabel class="direccionD" for="b" value="#{Ingreso.direccion}"></h:outputLabel>
             <br/>
-            <h:outputLabel class="label" for="b">Telefono:</h:outputLabel>
-            <h:outputLabel class="label" for="b" value="#{Ingreso.telefono}"></h:outputLabel>
+            <h:outputLabel class="telefono" for="b">Telefono:</h:outputLabel>
+            <h:outputLabel class="telefonoD" for="b" value="#{Ingreso.telefono}"></h:outputLabel>
             <br/>
-            <h:outputLabel class="label" for="b">Correo Electronico:</h:outputLabel>
-            <h:outputLabel class="label" for="b" value="#{Ingreso.correo}"></h:outputLabel>
+            <h:outputLabel class="correoE" for="b">Correo Electronico:</h:outputLabel>
+            <h:outputLabel class="correoD" for="b" value="#{Ingreso.correo}"></h:outputLabel>
             <br/>
             </h:messages>
             <h:commandButton class="salir" value="Cerrar sesión" action="faces/ingresar.xhtml" />
             <br/>
             <h:inputText class="busqueda" id="busqueda" />
+            <h:commandButton class="buscar" value="Buscar"/>
             <br/>
         </h:form>
-        <form enctype="multipart/form-data" action="uploader.php" method="POST">
-        <input class="cargar" name="uploadedfile" type="file" />
-        <input class="subir" type="submit" value="Subir archivo" />
-        </form>
        <p><img id="bg" src="faces/images/perfil.jpg"/></p>
         
     </h:body>

@@ -21,6 +21,18 @@ public class Texto {
             System.out.println("Error al escribir");
         }
     }
+        public void guardar(String dato){
+        String linea = null;
+        try{
+            File archivo=new File(System.getProperty("user.dir")+"HOLA"+".txt");
+            FileWriter escribir = new FileWriter(archivo,true);
+            escribir.write(dato);
+            escribir.close();
+        }
+        catch(Exception e){
+            System.out.println("Error al escribir");
+        }
+    }
     
     public int leer_ingreso(String nombre, String correo, String contraseña) throws FileNotFoundException{
         String linea = null;
