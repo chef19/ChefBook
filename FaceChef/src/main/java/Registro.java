@@ -20,7 +20,7 @@ public class Registro {
     private String telefono;
     private String direccion;
     private String foto;
-    
+    private static Lista lista;
     
     String nl = System.getProperty("line.separator");
 
@@ -115,21 +115,34 @@ public class Registro {
         this.foto=foto;
     }
     
+    public void iniciar (){
+        lista = new Lista ();
+    }
     
     public String guardar (){
         if("".equals(nombre) || "".equals(carrera) || "".equals(edad)  || "".equals(correo)  || "".equals(contraseña)  || 
            "".equals(carnet) || "".equals(año) || "".equals(telefono) || "".equals(direccion)){
            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información necesaria faltante"));
+        }
+        else{
+            Texto archivo = new Texto();
+            Persona persona = new Persona (nombre,  carrera,  edad,  correo, contraseña, carnet, año, telefono, direccion, foto);
+            Nodo nuevo = new Nodo (persona);
+            this.lista.agregar(nuevo);
+            archivo.guardar(nombre, nombre+nl+ carrera+nl+  edad+nl+  correo+nl+ contraseña+nl+ carnet+nl+ año+nl+ telefono+nl+ direccion+nl+ foto+nl+nuevo);
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Se registro correctamente "+nombre+" "+contraseña+" "+carnet));
+            return "faces/inicio.xhtml";
+        }
+        return null;
     }
-    else{
-        Texto archivo = new Texto();
-        Persona persona = new Persona (nombre,  carrera,  edad,  correo, contraseña, carnet, año, telefono, direccion, foto);
-        Nodo nuevo = new Nodo (persona);
-        archivo.guardar(nombre, nombre+nl+ carrera+nl+  edad+nl+  correo+nl+ contraseña+nl+ carnet+nl+ año+nl+ telefono+nl+ direccion+nl+ foto+nl+nuevo);
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Se registro correctamente "+nombre+" "+contraseña+" "+carnet));
-        return "inicio.xhtml";
-    }
-    return null;
-}
     
+    public String amigo (String correo){
+        for (int a=0; a<this.lista.size();a++){
+           if(((Persona)((Nodo)this.lista.obtenerElementoEnPosicion(a)).getDato()).getCorreo().equals(correo)){
+               this.nombre = ((Persona)((Nodo)this.lista.obtenerElementoEnPosicion(a)).getDato()).getNombre();
+               return "faces/amigo.xhtml";
+           }
+        }
+        return null;
+    }
 }

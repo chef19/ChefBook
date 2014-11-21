@@ -1,13 +1,16 @@
 public class Nodos {
     static Lista lista;
     
-    Nodos (Nodo n){
+    Nodos (){
         this.lista = new Lista ();
-        lista.agregar(n);
     }
 
     public Lista getLista() {
         return lista;
+    }
+    
+    public void agregar (Nodo n){
+        this.lista.agregar(n);
     }
 
     public void setLista(Lista lista) {
