@@ -9,18 +9,29 @@ import javax.validation.constraints.NotNull;
 public class Registro {
     @NotNull
     private String nombre;
+    @NotNull
     private String carrera;
+    @NotNull
     private String edad;
     @NotNull
     private String correo;
     @NotNull
     private String contraseña;
+    @NotNull
     private String carnet;
+    @NotNull
     private String año;
+    @NotNull
     private String telefono;
+    @NotNull
     private String direccion;
+    @NotNull
     private String foto;
+    private static Lista lista;
     
+    Registro (){
+        lista= new Lista ();
+    }
     
     String nl = System.getProperty("line.separator");
 
@@ -111,7 +122,14 @@ public class Registro {
     public void setNl(String nl) {
         this.nl = nl;
     }
-    
+
+    public Lista getLista() {
+        return lista;
+    }
+
+    public void setLista(Lista lista) {
+        this.lista = lista;
+    }
     
     public String guardar (){
         if("".equals(nombre) || "".equals(carrera) || "".equals(edad)  || "".equals(correo)  || "".equals(contraseña)  || 
@@ -122,6 +140,7 @@ public class Registro {
         Texto archivo = new Texto();
         Persona persona = new Persona (nombre,  carrera,  edad,  correo, contraseña, carnet, año, telefono, direccion, foto);
         Nodo nuevo = new Nodo (persona);
+        Nodos.lista.agregar(nuevo);        
         archivo.guardar(nombre, nombre+nl+ carrera+nl+  edad+nl+  correo+nl+ contraseña+nl+ carnet+nl+ año+nl+ telefono+nl+ direccion+nl+ foto+nl+nuevo);
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Se registro correctamente "+nombre+" "+contraseña+" "+carnet));
         return "inicio.xhtml";

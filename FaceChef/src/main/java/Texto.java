@@ -64,8 +64,9 @@ public class Texto {
         catch(Exception e){
             System.out.println("Error al escribir2");
         }
+        
         return null;
-    }
+    }    
 
     public static void main(String []args) throws IOException{
         Texto t = new Texto ();
