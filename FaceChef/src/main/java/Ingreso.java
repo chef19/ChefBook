@@ -44,23 +44,6 @@ public class Ingreso {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }    
-    
-    public String ingreso() throws FileNotFoundException{
-        Texto archivo = new Texto ();
-        if (archivo.leer_ingreso(nombre, correo, contraseña)== 2){
-            this.nombre=nombre;
-            this.setAño(this.perfil(6));
-            this.setCarrera(this.perfil(1));
-            this.setDireccion(this.perfil(8));
-            this.setEdad(this.perfil(2));
-            this.setTelefono(this.perfil (7));
-            return "faces/perfil.xhtml";
-        }
-        else{
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Datos incorrectos, ingrese nuevamente"));
-        }
-        return null;
-    }
 
     public String getEdad() {
         return edad;
@@ -106,6 +89,23 @@ public class Ingreso {
         Texto archivo = new Texto ();
         if (nombre != null){
             return archivo.perfil(nombre, a);
+        }
+        return null;
+    }
+    
+    public String ingreso() throws FileNotFoundException{
+        Texto archivo = new Texto ();
+        if (archivo.leer_ingreso(nombre, correo, contraseña)== 2){
+            this.nombre=nombre;
+            this.setAño(this.perfil(6));
+            this.setCarrera(this.perfil(1));
+            this.setDireccion(this.perfil(8));
+            this.setEdad(this.perfil(2));
+            this.setTelefono(this.perfil (7));
+            return "faces/perfil.xhtml";
+        }
+        else{
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Datos incorrectos, ingrese nuevamente"));
         }
         return null;
     }
