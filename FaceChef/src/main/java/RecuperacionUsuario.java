@@ -1,5 +1,7 @@
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class RecuperacionUsuario
  */
 @WebServlet("/RecuperacionUsuario")
+@Named (value="Recuperacion")
+@RequestScoped
 public class RecuperacionUsuario extends HttpServlet {
     private static final long serialVersionUID = 1L;
        
